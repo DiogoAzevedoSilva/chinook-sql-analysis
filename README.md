@@ -97,7 +97,7 @@ The analysis is organised into four business themes, each addressing a distinct 
 | Artist catalog efficiency (revenue per track) | CTE, `AVG`, `HAVING` filter |
 | Album with most unique tracks purchased vs most total purchases | `DISTINCT`, two approaches compared |
 | Tracks never purchased (dead catalog weight) | `LEFT JOIN` + `IS NULL` |
-| Percentage of catalog never purchased | Nested CTEs, `CASE WHEN` inside `AVG()` |
+| Percentage of catalog never purchased | Nested CTEs, subquery inside `SELECT` |
 | Genre pairs most commonly bought together | Self join, `a.genre_name < b.genre_name` |
 
 **Key Findings:**
@@ -156,15 +156,6 @@ revenue / SUM(revenue) OVER() * 100
 
 -- Month-over-month change
 LAG(revenue) OVER(ORDER BY date_month)
-```
-
-**Conditional Aggregation**
-```sql
--- Count rows matching a condition
-SUM(CASE WHEN condition THEN 1 ELSE 0 END)
-
--- Percentage of rows matching a condition
-AVG(CASE WHEN condition THEN 1 ELSE 0 END) * 100
 ```
 
 **Finding Unmatched Records**
