@@ -12,6 +12,7 @@ The Chinook database is a widely used open-source sample database modelling a di
 
 - **Database:** MySQL
 - **Query Interface:** MySQL Workbench
+- **Visualisation:** Python (pandas, matplotlib, seaborn)
 - **Dataset:** [Chinook Database](https://github.com/lerocha/chinook-database)
 
 ### Technical Skills Demonstrated
@@ -35,10 +36,11 @@ Where the Chinook data revealed limitations — such as uniform purchase frequen
 ```
 chinook-analysis/
 │
-├── README.md                  ← this file
-├── chinook_analysis.sql       ← all queries
+├── README.md                       ← this file
+├── chinook_analysis.sql            ← all queries
+├── chinook_visualizations.ipynb    ← charts and insights
 │
-└── results/                   ← screenshots of key query outputs
+└── results/                        ← query outputs exported as CSV
 ```
 
 The analysis is organised into four business themes, each addressing a distinct area of the business.
